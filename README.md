@@ -10,7 +10,7 @@
 
 1) Создаём файл нужного размера на основной ФС
 
-dd if=/dev/zero of=floppy.img bs=1M count=32
+`dd if=/dev/zero of=floppy.img bs=1M count=32`
 
 2) `mkfs.fat -F 16 floppy.img`
 
@@ -19,6 +19,7 @@ dd if=/dev/zero of=floppy.img bs=1M count=32
 `sudo mount -o loop,fat=16 -t vfat floppy.img floppy`
 
 Добавляем файлы: перейдя под рута (sudo -i), `touch file.txt`
-Записываем в них что-то.
+
+Записываем в них что-то, например `echo "123" > file.txt`
 
 Компилируем и запускаем программу: `gcc main.c -o main` и `./main`
